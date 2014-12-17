@@ -144,3 +144,15 @@ gulp.task('watch', function () {
     gulp.watch('demo', ['copyHTML']);
     gulp.watch('src/css', ['copyCSS']);
 });
+var deploy = require('gulp-gh-pages');
+var options = {
+    //remoteUrl: "https://github.com/TopQualityUA/TeamvoyFrontend.git",
+    branch: "gh-pages"};
+/**
+ * Push build to gh-pages
+ */
+gulp.task('deploy', function () {
+    return gulp.src(["./dist/**/*","./demo/**/*", "./documentation/**/*",
+        "./library/vendor/**/*"])
+        .pipe(deploy(options))
+});
