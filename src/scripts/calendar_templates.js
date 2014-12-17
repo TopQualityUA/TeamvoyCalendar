@@ -12,8 +12,8 @@ define([],
             dayTemplate: "<div class='calendar__day'>{{day}}</div>",
             dayNameTemplate: "<div class='calendar__day-name'>{{day_name}}</div>",
             calendarTemplate: "<div class='calendar'><div class='calendar__caption'>" +
-                "<button class='calendar__button calendar__button--desc'></button>" +
-                "<button class='calendar__button calendar__button--asc'></button>" +
+                "<button class='calendar__prev-month'></button>" +
+                "<button class='calendar__next-month'></button>" +
                 "<div class='calendar__month-and-year'>" +
                 "<span class='calendar__month-name'>{Month Name}</span>" +
                 "<span class='calendar__year-name'>{Year Name}</span>" +

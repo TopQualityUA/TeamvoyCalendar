@@ -171,8 +171,9 @@ define(["calendar_templates", "event_machine",
             function _setEvents() {
                 _root
                     .addEventListener("click", function(e) {
-                        if (e.target.classList.contains("calendar__button")) {
-                            if (e.target.classList.contains("calendar__button--asc")) {
+                        if (e.target.classList.contains("calendar__next-month") ||
+                            e.target.classList.contains("calendar__prev-month")) {
+                            if (e.target.classList.contains("calendar__next-month")) {
                                 _that.nextMonth();
                             } else {
                                 _that.previousMonth();
