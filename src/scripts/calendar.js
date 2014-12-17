@@ -26,6 +26,10 @@ define(["calendar_templates", "event_machine",
             };
         var Calendar = function(container, properties) {
             EventMachine.call(this);
+
+            //if moment wasn't included like module
+            moment = moment || window.moment;
+
             moment.locale("en");
             var _root,
                 _that = this,

@@ -15,6 +15,10 @@ define(["calendar", "calendar_templates", "event_machine",
        */
       var DateRangePicker = function(container, newStart, newEnd, calendarConfig) {
         EventMachine.call(this);
+
+        //if moment wasn't included like module
+        moment = moment || window.moment;
+
         moment.locale("en");
         var _root,
             _range = {
