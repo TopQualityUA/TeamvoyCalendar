@@ -5,7 +5,7 @@
     "Maksym Arzubov <maksym.arzubov@teamvoy.com>"
   ],
   "description": "Multilanguage and flexible calendar for Teamvoy",
-  "main": "calendar.js",
+  "main": "dist/scripts/calendar.js",
   "keywords": [
     "calendar",
     "moment",
