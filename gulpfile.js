@@ -138,7 +138,7 @@ gulp.task('copyCSS', function() {
 });
 gulp.task('build', ['scripts:calendar', 'scripts:dateRangePicker',
     'scripts:calendarMin', 'scripts:dateRangePickerMin',
-    'sassToCSS', 'sassToCSSMin', 'images']);
+    'sassToCSS', 'sassToCSSMin']);
 gulp.task('watch', function () {
     gulp.watch('src/scripts', ['copyJS']);
     gulp.watch('demo', ['copyHTML']);
