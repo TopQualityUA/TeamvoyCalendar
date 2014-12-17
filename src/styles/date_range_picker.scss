@@ -1,0 +1,23 @@
+.date-range-picker {
+  display: inline-block;
+  width: auto;
+  padding: 10px;
+}
+
+.date-range-picker .calendar {
+  float: left;
+}
+
+.calendar__day--selected {
+  background: #9cdbf7;
+}
+
+.calendar__day--selected--start {
+  background: #3498db;
+  color: #fff;
+}
+
+.calendar__day--selected--end {
+  background: #3498db;
+  color: #fff;
+}

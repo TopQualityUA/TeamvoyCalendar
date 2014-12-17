@@ -13,7 +13,7 @@
     padding-top: 5px;
     padding-bottom: 5px;
   }
-  &__button {
+  &__next-month {
     position: absolute;
     border: none;
     background: transparent;
@@ -22,17 +22,23 @@
     &:active {
       opacity: 0.7;
     }
-    &--asc {
-      right: 0;
-      &:after {
-        content: url(images/right.png);
-      }
+    right: 0;
+    &:after {
+      content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAABSElEQVQ4jdWTzUrDQBDH/5MMgiI99RE8+AyiaHsSJYZdxY+H6Mv0mJsgFJpDk6Y0J0EQfCHxY3XNeLAtOaSb1F50brMz/9/OzO4Af93IFdRad0Rkh5nv4jh+Wwuotb4QkeEs58Fae5pl2Wsd0HPErksXHjHzJAiCrXWAfQDvJb/TBOqcoVJqH0AOYHshIHqy1h6Px+PnlYEAEIbhged506ZQV8sAgDRNH0XkEoCZn4nInu/7SVX7tUAASJIkJ6LzMhRAl5l7vwICQFEUL0Rk6/K4CUwp1QWQiUi5xXtm7q9codb6DD8vXYalzHxStT113yYEMASwsRAQJb7vX8Vx/FGlWVqhUuoQwKAMA5C3Wq2bZTDAMUMi6onI5twXkakxRo9GI7NM46ywKIoBgK+ZOzHG6DzPnTCgweoR0W673b6NouizDvY/7BuU8Hgiy295WAAAAABJRU5ErkJggg==);
     }
-    &--desc {
-      left: 0;
-      &:after {
-        content: url(images/left.png);
-      }
+  }
+  &__prev-month {
+    position: absolute;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+    &:active {
+      opacity: 0.7;
+    }
+    left: 0;
+    &:after {
+      content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAABbklEQVQ4jc2UTUrDQBiG328maqIWeoIeoFdwoy60QfKjOOAyIHQleBUXHqBLsZiMLdq6cqNXsAdw2U0XaqNpGRetEEImCa46y4f3fch84Rtg1Q+vGmy322uNRuO82Wxao9HoXZejKjLbtjdM07wDcARgrpQ6lVLKvCwrkwVBYJqmGS1lwOJWZ7p8oVAIYU0mEwnATuEpEV3rOtoZuq5bAzAkov0U/gDQiqLoRdfLnaHrujXO+QDATkZmF8mAnCs7jrPJOb/PyGIAokwGAEYWcM4vAeyl0LdS6kRKOSyT5X4hYyw7hoQx9llFlitMkuQKwHMKbQN49H1/91/Cfr//ZRhGC0DvjymltojoyfM8p0yo3RQhxPpsNrsF4KXwDxGJMAx7ul7h6gkhrCRJIiI6TOEpgAPdHy/clG63O63X6z6AQQpbSqkLXad0lzudThzH8TGAhyWaA7jR5Su9NsDi+RqPxwERvYVh+Fq1t3rnF6EobROAB1HRAAAAAElFTkSuQmCC);
     }
   }
   &__month-name {
@@ -90,34 +96,7 @@
       background: #fb435f !important;
       color: #fff;
     }
-    &--selected {
-      background: #9cdbf7;
-      &--start {
-        background: #3498db;
-        color: #fff;
-      }
-      &--end {
-        background: #3498db;
-        color: #fff;
-      }
-    }
-    
-  }
-  &--date-range-picker {
-    &--start {
-
-    }
-    &--end {
-
-    }
   }
 }
 
-.date-range-picker {
-  display: inline-block;
-  width: auto;
-  padding: 10px;
-}
-.date-range-picker .calendar{
-  float:left;
-}
+
