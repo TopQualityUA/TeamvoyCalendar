@@ -90,19 +90,30 @@ gulp.task('sassToCSS', function() {
         .pipe(gulp.dest('dist/styles'));
 });
 
-gulp.task("sassToCSSMin", function () {
+gulp.task("sassToCSSCalendarMin", function () {
     var s = plugins.sass({});
     s.on('error', function (e) {
         console.log(e);
         s.end();
     });
-    gulp.src('src/styles/**/*.scss')
+    gulp.src('src/styles/calendar.scss')
         .pipe(s)
         .pipe(minifyCSS({keepBreaks:false}))
         .pipe(plugins.rename('calendar_min.css'))
         .pipe(gulp.dest('dist/styles'));
 });
-
+gulp.task("sassToCSSDateRangePickerMin", function () {
+    var s = plugins.sass({});
+    s.on('error', function (e) {
+        console.log(e);
+        s.end();
+    });
+    gulp.src('src/styles/date_range_picker.scss')
+        .pipe(s)
+        .pipe(minifyCSS({keepBreaks:false}))
+        .pipe(plugins.rename('date_range_picker_min.css'))
+        .pipe(gulp.dest('dist/styles'));
+});
 gulp.task('images', function() {
     return gulp.src('src/css/images/**/*')
         // Pass in options to the task
@@ -138,7 +149,7 @@ gulp.task('copyCSS', function() {
 });
 gulp.task('build', ['scripts:calendar', 'scripts:dateRangePicker',
     'scripts:calendarMin', 'scripts:dateRangePickerMin',
-    'sassToCSS', 'sassToCSSMin']);
+    'sassToCSS', 'sassToCSSCalendarMin', 'sassToCSSDateRangePickerMin']);
 gulp.task('watch', function () {
     gulp.watch('src/scripts', ['copyJS']);
     gulp.watch('demo', ['copyHTML']);
