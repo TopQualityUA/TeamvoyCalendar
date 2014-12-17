@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../css/calendar_documentation.css"/>
+<link rel="stylesheet" href="../dist/styles/calendar.css"/>
 
 Calendar.js
 =============
@@ -25,7 +25,21 @@ Installation
 
 Download the Calendar library from here: https://github.com/neformal13/TeamvoyFrontend/tree/master/javascript/calendar and include it like this:
 ```js
-<script data-main="../javascript/main.js" src="../../../library/vendor/requirejs/require.js"></script>
+<script data-main="../main.js" src="../vendor/requirejs/require.js"></script>
+
+//and in main.js
+require.config({
+    paths: {
+        "moment": "../library/vendor/moment/min/moment-with-locales",
+        "calendar": "../dist/scripts/calendar",
+        "date_range_picker": "../dist/scripts/date_range_picker"
+    }
+});
+require(["calendar", "date_range_picker"],
+    function(Calendar, DateRangePicker) {
+
+    //and your logic goes here
+}
 ```
 
 Usage
@@ -151,54 +165,4 @@ You can use calendar to create date range pickers:
 <div class="container" id="seventhContainer">
 </div>
 
-<script data-main="../javascript/main.js" src="../../../library/vendor/requirejs/require.js"></script>
-```js
-/* global require: true */
-require.config({
-    paths: {
-        "moment": "../../../library/vendor/moment/min/moment-with-locales",
-        "event_machine": "../../../library/event_machine"
-    }
-});
-require(["calendar", "date_range_picker"],
-    function(Calendar, DateRangePicker) {
-        "use strict";
-
-        var firstCalendar, secondCalendar, fifthCalendar, sixthCalendar, seventhCalendar, eightsCalendar,
-            firstContainer = document.getElementById("firstContainer"),
-            secondContainer = document.getElementById("secondContainer"),
-            fifthContainer = document.getElementById("fifthContainer"),
-            sixthContainer = document.getElementById("sixthContainer"),
-            seventhContainer = document.getElementById("seventhContainer"),
-            eightsContainer = document.getElementById("eightsContainer");
-
-        firstCalendar = new Calendar(firstContainer, {});
-        secondCalendar = new Calendar(secondContainer, {
-            year: 2014,
-            month: 5,
-            firstDayOfWeek: "Mon",
-            locale: "uk",
-            weekends: ["Sat", "Sun"]
-        });
-        fifthCalendar = new Calendar(fifthContainer, {
-            year: 2014,
-            month: 5,
-            firstDayOfWeek: "Mon",
-            locale: "en",
-            weekends: ["Sat", "Sun"]
-        });
-        sixthCalendar = new Calendar(sixthContainer, {});
-        seventhCalendar = new DateRangePicker(seventhContainer);
-        eightsCalendar = new Calendar(eightsContainer, {
-            year: 2014,
-            month: 5,
-            locale: "fr"
-        });
-        document.querySelector(".btn").onclick = function() {
-            var newConfig = {};
-            newConfig.year = document.querySelector(".year").value;
-            newConfig.month = document.querySelector(".month").value;
-            secondCalendar.setConfig(newConfig);
-        };
-    });
-```
+<script data-main="documentation_main.js" src="../library/vendor/requirejs.js"></script>

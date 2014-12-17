@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link type="text/css" rel="stylesheet" href="../assets/css/gh.css"/>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/prettify.css"/>
+    
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/prettify.js"></script>
+
+  </head>
+<body onload="prettyPrint()">
+
+  <div id="toc">
+    <div id="toc-inner">
+      <ul class="nav nav-list"><li><a href="#calendar_js">Calendar.js</a></li><li><a href="#installation">Installation</a></li><li><a href="#usage">Usage</a></li><li><a href="#configure">Configure</a></li><li><a href="#config_object___optional_parameter_with_fields_">Config Object - optional parameter with fields</a></li><li><a href="#listen_to_events">Listen to events</a></li><li><a href="#calendar_methods">Calendar methods</a></li><li><a href="#more_examples">More examples</a></li></ul>
+    </div>
+  </div>
+
+  <div id="wrapper">
+    <div id="header">
+
+    </div>
+
+    <div class="clear"></div>
+    <div id="main">
+      <div id="content" class="post">
+
+
+      <link rel="stylesheet" href="../dist/styles/calendar.css"/>
+
+<a name="calendar_js"></a><h1>Calendar.js<a class="anchorlink" href="#calendar_js"></a></h1>
+<p>CalendarJS is an open source library that provides using custom calendar element.
+It&#39;s lightweight, and depends only on moment js library (for localization).</p>
+<p>Try it out:</p>
+<pre class="prettyprint">&lt;div id=&quot;firstContainer&quot;&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    var firstContainer = document.getElementById(&#39;firstContainer&#39;);
+    var firstCalendar = new Calendar(firstContainer);
+    firstCalendar.getRoot().classList.add(&#39;table&#39;, &#39;table-striped&#39;);
+&lt;/script&gt;</pre>
+<div class="container" id="firstContainer">
+</div>
+
+<a name="installation"></a><h2>Installation<a class="anchorlink" href="#installation"></a></h2>
+<p>Download the Calendar library from here: <a href="https://github.com/neformal13/TeamvoyFrontend/tree/master/javascript/calendar">https://github.com/neformal13/TeamvoyFrontend/tree/master/javascript/calendar</a> and include it like this:</p>
+<pre class="prettyprint">&lt;script data-main=&quot;../main.js&quot; src=&quot;../vendor/requirejs/require.js&quot;&gt;&lt;/script&gt;
+
+//and in main.js
+require.config({
+    paths: {
+        &quot;moment&quot;: &quot;../library/vendor/moment/min/moment-with-locales&quot;,
+        &quot;calendar&quot;: &quot;../dist/scripts/calendar&quot;,
+        &quot;date_range_picker&quot;: &quot;../dist/scripts/date_range_picker&quot;
+    }
+});
+require([&quot;calendar&quot;, &quot;date_range_picker&quot;],
+    function(Calendar, DateRangePicker) {
+
+    //and your logic goes here
+}</pre>
+<a name="usage"></a><h2>Usage<a class="anchorlink" href="#usage"></a></h2>
+<p>The typical way of using calendar is by creating a container element and call new Calendar(containerElement):</p>
+<pre class="prettyprint">&lt;div id=&quot;containerElement&quot;&gt;
+&lt;/div&gt;
+&lt;script&gt;
+var containerElement = document.getElementById(&#39;containerElement&#39;);
+new Calendar(containerElement);
+&lt;/script&gt;</pre>
+<div class="container" id="sixthContainer">
+</div>
+
+<p>Also you can create with configureObject:</p>
+<pre class="prettyprint">&lt;div id=&quot;containerElement&quot;&gt;
+&lt;/div&gt;
+&lt;script&gt;
+var containerElement = document.getElementById(&#39;containerElement&#39;);
+new Calendar(containerElement, {year: 2014, month: 5,
+ firstDayOfWeek: &quot;Mon&quot;, locale: &quot;en&quot;, weekends:[&quot;Sat&quot;,&quot;Sun&quot;]});
+&lt;/script&gt;</pre>
+<div class="container" id="fifthContainer">
+</div>
+
+<a name="configure"></a><h2>Configure<a class="anchorlink" href="#configure"></a></h2>
+<p>There are two ways to configure calendar.
+You can configure your calendar, by passing configureObject when calendar is created.</p>
+<pre class="prettyprint">&lt;div id=&quot;containerElement&quot;&gt;
+&lt;/div&gt;
+&lt;script&gt;
+var containerElement = document.getElementById(&#39;containerElement&#39;);
+new Calendar(containerElement, {year: 2014, month: 5, locale: &quot;fr&quot;});
+&lt;/script&gt;</pre>
+<div class="container" id="eightsContainer">
+</div>
+
+<p>But if you have created component you can set him new configure object.</p>
+<pre class="prettyprint">newConfig = {year: 2014, month: 5,  firstDayOfWeek: &quot;Sun&quot; ,
+locale: &quot;uk&quot;, weekends:[&quot;Sat&quot;,&quot;Sun&quot;]}
+calendar.config = newConfig;</pre>
+<p><aside class="col-xs-4 aside-config"></p>
+<p><input class="year" type="number" placeholder="Enter year in digits" value="2014"></p>
+<p><input class="month" type="number" placeholder="Enter month in digits from 1 to 12" value="1"></p>
+<p><button class="btn btn-success">Change date</button>
+</aside></p>
+<div class="container" id="secondContainer">
+
+</div>
+
+<a name="config_object___optional_parameter_with_fields_"></a><h3>Config Object - optional parameter with fields:<a class="anchorlink" href="#config_object___optional_parameter_with_fields_"></a></h3>
+<pre class="prettyprint">config = {
+year: 2014,             // current year, type: number.
+month: 5,               // month - current month, type: number.
+firstDayOfWeek: &quot;Sun&quot;,  // firstDayOfWeek - first day of week in calendar,
+                        //starts with upcased letter
+locale: &quot;en&quot;,           // locale - language of calendar, short name,
+                        // type: string. Example: &#39;monday&#39;.
+weekends:[&quot;Sat&quot;,&quot;Sun&quot;]  //array of weekends days.
+                        //starts with upcased letter
+}
+var calendar = new Calendar(containerElement, config);</pre>
+<a name="listen_to_events"></a><h3>Listen to events<a class="anchorlink" href="#listen_to_events"></a></h3>
+<ol class="list">
+<li>monthChanged - occur when config month data changed.<pre class="prettyprint">function monthHandler(month){
+console.log(month); //it will log new month
+}
+//listening to the monthChanged event
+Calendar.on(&#39;monthChanged&#39;, monthHandler);</pre>
+</li>
+<li>daySelected - occur when selecting day changed.<pre class="prettyprint">function daySelectedHandler(day){
+console.log(day); //it will log selected day
+}
+//listening to the daySelected event
+Calendar.on(&#39;daySelected&#39;, daySelectedHandler);</pre>
+</li>
+</ol>
+<a name="calendar_methods"></a><h3>Calendar methods<a class="anchorlink" href="#calendar_methods"></a></h3>
+<ol class="list">
+<li>showToday(); - set calendar config to show current day.</li>
+<li>on(eventName,callback); - add new function to event listener.</li>
+<li>off(eventName,callback); - remove function from event listener.</li>
+<li>getRoot() - getting root element.</li>
+<li>render() - generating view.</li>
+<li>renderBody() - generating body view.</li>
+<li>renderCaption() - generating caption view.</li>
+<li>renderHeader() - generating header view.</li>
+<li>selectDays(styles, range) - adding styles to the days in range.</li>
+<li>trigger(eventName, params) - trigger functions.</li>
+<li>dayTemplate(day) - sets view of day.</li>
+<li>generateModel(config) - generates calendar model.</li>
+</ol>
+<a name="more_examples"></a><h2>More examples<a class="anchorlink" href="#more_examples"></a></h2>
+<p>You can use calendar to create date range pickers:</p>
+<pre class="prettyprint">&lt;div id=&quot;containerElement&quot;&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    var firstContainer = document.getElementById(&#39;firstContainer&#39;);
+    var firstDateRangePicker = new DateRangePicker(firstContainer);
+&lt;/script&gt;</pre>
+<div class="container" id="seventhContainer">
+</div>
+
+<script data-main="documentation_main.js" src="../library/vendor/requirejs.js"></script>
+
+
+<!-- end content -->
+      </div>
+    </div>
+
+    <div class="clear">
+    </div>
+
+    <div id="footer">
+    </div>
+  </div>
+</body>
+</html>
