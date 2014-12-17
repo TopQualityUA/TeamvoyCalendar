@@ -6,6 +6,9 @@ Calendar.js
 CalendarJS is an open source library that provides using custom calendar element.
 It's lightweight, and depends only on moment js library (for localization).
 
+* [demo](https://TopQualityUA.github.io/TeamvoyCalendar/calendar_demo.html)
+* [documentation](https://TopQualityUA.github.io/TeamvoyCalendar/readme.html)
+
 Try it out:
 
 ```js
