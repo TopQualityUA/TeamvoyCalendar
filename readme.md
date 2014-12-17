@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="../dist/styles/calendar.css"/>
+<link rel="stylesheet" href="../dist/styles/date_range_picker.css"/>
 
 Calendar.js
 =============
