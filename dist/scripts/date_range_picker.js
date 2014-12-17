@@ -7,7 +7,7 @@ define('calendar_templates', [], function () {
         templates: {
             dayTemplate: '<div class=\'calendar__day\'>{{day}}</div>',
             dayNameTemplate: '<div class=\'calendar__day-name\'>{{day_name}}</div>',
-            calendarTemplate: '<div class=\'calendar\'><div class=\'calendar__caption\'>' + '<button class=\'calendar__button calendar__button--desc\'></button>' + '<button class=\'calendar__button calendar__button--asc\'></button>' + '<div class=\'calendar__month-and-year\'>' + '<span class=\'calendar__month-name\'>{Month Name}</span>' + '<span class=\'calendar__year-name\'>{Year Name}</span>' + '</div>' + '</div>' + '<div class=\'calendar__header\'></div>' + '<div class=\'calendar__body\'></div>' + '</div>'
+            calendarTemplate: '<div class=\'calendar\'><div class=\'calendar__caption\'>' + '<button class=\'calendar__prev-month\'></button>' + '<button class=\'calendar__next-month\'></button>' + '<div class=\'calendar__month-and-year\'>' + '<span class=\'calendar__month-name\'>{Month Name}</span>' + '<span class=\'calendar__year-name\'>{Year Name}</span>' + '</div>' + '</div>' + '<div class=\'calendar__header\'></div>' + '<div class=\'calendar__body\'></div>' + '</div>'
         },
         _parseLineIntoDOMElement: function (text) {
             var _templateChild, _template = document.createElement('body'), _fragment = document.createDocumentFragment();
@@ -114,6 +114,7 @@ define('calendar', [
         };
     var Calendar = function (container, properties) {
         EventMachine.call(this);
+        moment = moment || window.moment;
         moment.locale('en');
         var _root, _that = this, _config = {
                 year: new Date().getFullYear(),
@@ -189,8 +190,8 @@ define('calendar', [
         };
         function _setEvents() {
             _root.addEventListener('click', function (e) {
-                if (e.target.classList.contains('calendar__button')) {
-                    if (e.target.classList.contains('calendar__button--asc')) {
+                if (e.target.classList.contains('calendar__next-month') || e.target.classList.contains('calendar__prev-month')) {
+                    if (e.target.classList.contains('calendar__next-month')) {
                         _that.nextMonth();
                     } else {
                         _that.previousMonth();
@@ -285,6 +286,7 @@ define('date_range_picker', [
     'use strict';
     var DateRangePicker = function (container, newStart, newEnd, calendarConfig) {
         EventMachine.call(this);
+        moment = moment || window.moment;
         moment.locale('en');
         var _root, _range = {
                 start: moment(),
