@@ -1,8 +1,9 @@
 /* global require: true */
 require.config({
     paths: {
-        "moment": "../../library/vendor/moment/min/moment-with-locales",
-        "event_machine": "../../library/event_machine"
+        "moment": "../library/vendor/moment/min/moment-with-locales",
+        "calendar": "../dist/scripts/calendar",
+        "date_range_picker": "../dist/scripts/date_range_picker"
     }
 });
 require(["calendar", "date_range_picker"],
