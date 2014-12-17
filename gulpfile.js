@@ -136,7 +136,7 @@ gulp.task('copyCSS', function() {
         .pipe(s)
         .pipe(gulp.dest('.temp'));
 });
-gulp.task('deploy', ['scripts:calendar', 'scripts:dateRangePicker',
+gulp.task('build', ['scripts:calendar', 'scripts:dateRangePicker',
     'scripts:calendarMin', 'scripts:dateRangePickerMin',
     'sassToCSS', 'sassToCSSMin', 'images']);
 gulp.task('watch', function () {
@@ -144,6 +144,3 @@ gulp.task('watch', function () {
     gulp.watch('demo', ['copyHTML']);
     gulp.watch('src/css', ['copyCSS']);
 });
-gulp.task('build', ['scripts:calendar', 'scripts:dateRangePicker',
-    'scripts:calendarMin', 'scripts:dateRangePickerMin',
-    'sassToCSS', 'sassToCSSMin', 'images']);
