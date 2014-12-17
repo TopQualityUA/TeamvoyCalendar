@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Calendar Demo</title>
+		<link rel="stylesheet" href="../dist/styles/calendar_min.css"/>
+	</head>
+	<body>
+		<article>
+			<div class="container" id="calendar-container">
+			</div>
+			<div class="range-inputs" id="range-inputs" style="padding: 10px; display: block">
+				<input id="range-start" type="text" placeholder="Range start day" readonly
+				style="border: 1px solid #d3dadd;
+				box-sizing: border-box;
+				background: #eaeced;
+				font: 16px/19px Lato,sans-serif,Arial,Helvetica,sans-serif;
+				padding: 16px 13px;
+				color: #555c5e;
+				margin-right: 10px;"
+				/>
+				<input id="range-end" type="text" placeholder="Range end day" readonly
+				style="border: 1px solid #d3dadd;
+				box-sizing: border-box;
+				background: #eaeced;
+				font: 16px/19px Lato,sans-serif,Arial,Helvetica,sans-serif;
+				padding: 16px 13px;
+				color: #555c5e;
+				margin-right: 10px; "
+				/>
+				<button style="border: 1px solid #d3dadd;
+				box-sizing: border-box;
+				background: #fb435f;
+				font: 16px/19px Lato,sans-serif,Arial,Helvetica,sans-serif;
+				padding: 16px 13px;
+				color: #fff;
+				width: 200px;
+				opacity: 0.8; ">Submit</button>
+			</div>
+			<div class="container" id="date-range-picker-container">
+			</div>
+		</article>
+		<script data-main="../src/scripts/main.js" src="../library/vendor/requirejs.js"></script>
+	</body>
+</html>

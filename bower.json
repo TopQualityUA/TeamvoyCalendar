@@ -1,0 +1,31 @@
+{
+  "name": "TeamvoyCalendar",
+  "version": "0.0.1",
+  "authors": [
+    "Maksym Arzubov <maksym.arzubov@teamvoy.com>"
+  ],
+  "description": "Multilanguage and flexible calendar for Teamvoy",
+  "main": "calendar.js",
+  "keywords": [
+    "calendar",
+    "moment",
+    "date",
+    "picker",
+    "date",
+    "range",
+    "picker"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "library/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "~2.8.4"
+  }
+}
