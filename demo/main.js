@@ -3,11 +3,12 @@ require.config({
     paths: {
         "moment": "../library/vendor/moment/min/moment-with-locales",
         "calendar": "../dist/scripts/calendar",
-        "date_range_picker": "../dist/scripts/date_range_picker"
+        "date_range_picker": "../dist/scripts/date_range_picker",
+        "umdDateRangePicker": "../dist/scripts/date_range_picker_umd"
     }
 });
-require(["calendar", "date_range_picker"],
-    function(Calendar, DateRangePicker) {
+require(["calendar", "date_range_picker", 'umdDateRangePicker'],
+    function(Calendar, DateRangePicker, umdDateRangePicker) {
         "use strict";
 
         new Calendar(document.getElementById("calendar-container"), {
