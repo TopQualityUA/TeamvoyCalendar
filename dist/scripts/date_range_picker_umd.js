@@ -12,7 +12,7 @@
 })(window, function (exports, moment) {
 
     // exporting
-    exports.DateRangePicker = function () {
+    exports.TeamvoyCalendar = function () {
 
         var CalendarTemplates = function () {
             return this;
@@ -455,6 +455,9 @@
 
             _init.call(this);
         };
-        return DateRangePicker;
+        return {
+            Calendar: Calendar,
+            DateRangePicker: DateRangePicker
+        };
     };
 });
