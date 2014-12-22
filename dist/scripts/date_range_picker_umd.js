@@ -459,5 +459,5 @@
             Calendar: Calendar,
             DateRangePicker: DateRangePicker
         };
-    };
+    }();
 });
