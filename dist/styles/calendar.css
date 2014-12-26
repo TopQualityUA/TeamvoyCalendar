@@ -1,8 +1,4 @@
 .calendar {
-  position: relative;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 20px;
   font: 16px Lato, Arial, Helvetica, sans-serif; }
   .calendar__caption {
     position: relative;
