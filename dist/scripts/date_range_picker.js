@@ -190,6 +190,7 @@ define('calendar', [
         };
         function _setEvents() {
             _root.addEventListener('click', function (e) {
+                e.stopPropagation();
                 if (e.target.classList.contains('calendar__next-month') || e.target.classList.contains('calendar__prev-month')) {
                     if (e.target.classList.contains('calendar__next-month')) {
                         _that.nextMonth();
