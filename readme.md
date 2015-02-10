@@ -1,8 +1,6 @@
 <link rel="stylesheet" href="../dist/styles/calendar.css"/>
 <link rel="stylesheet" href="../dist/styles/date_range_picker.css"/>
 
-[![bitHound Score](https://www.bithound.io/TopQualityUA/TeamvoyCalendar/badges/score.svg)](https://www.bithound.io/TopQualityUA/TeamvoyCalendar)
-
 Calendar.js
 =============
 
