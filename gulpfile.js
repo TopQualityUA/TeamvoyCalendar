@@ -79,37 +79,27 @@ gulp.task("scripts:dateRangePickerMin", function () {
 
 });
 
+plugins.sass({}).on('error', function (e) {
+    console.log(e);
+    plugins.sass({}).end();
+});
+
 gulp.task('sassToCSS', function() {
-    var s = plugins.sass({});
-    s.on('error', function (e) {
-        console.log(e);
-        s.end();
-    });
     gulp.src('src/styles/**/*.scss')
-        .pipe(s)
+        .pipe(plugins.sass({}))
         .pipe(gulp.dest('dist/styles'));
 });
 
 gulp.task("sassToCSSCalendarMin", function () {
-    var s = plugins.sass({});
-    s.on('error', function (e) {
-        console.log(e);
-        s.end();
-    });
     gulp.src('src/styles/calendar.scss')
-        .pipe(s)
+        .pipe(plugins.sass({}))
         .pipe(minifyCSS({keepBreaks:false}))
         .pipe(plugins.rename('calendar_min.css'))
         .pipe(gulp.dest('dist/styles'));
 });
 gulp.task("sassToCSSDateRangePickerMin", function () {
-    var s = plugins.sass({});
-    s.on('error', function (e) {
-        console.log(e);
-        s.end();
-    });
     gulp.src('src/styles/date_range_picker.scss')
-        .pipe(s)
+        .pipe(plugins.sass({}))
         .pipe(minifyCSS({keepBreaks:false}))
         .pipe(plugins.rename('date_range_picker_min.css'))
         .pipe(gulp.dest('dist/styles'));
@@ -142,9 +132,8 @@ gulp.task('copyHTML', function () {
         .pipe(gulp.dest('.temp'));
 });
 gulp.task('copyCSS', function() {
-    var s = plugins.sass({});
     gulp.src(path.scss)
-        .pipe(s)
+        .pipe(plugins.sass({}))
         .pipe(gulp.dest('.temp'));
 });
 gulp.task('build', ['scripts:calendar', 'scripts:dateRangePicker',
@@ -165,5 +154,5 @@ var options = {
 gulp.task('deploy', function () {
     return gulp.src(["./dist/**/*","./demo/**/*", "./documentation/**/*",
         "./library/vendor/**/*"])
-        .pipe(deploy(options))
+        .pipe(deploy(options));
 });
