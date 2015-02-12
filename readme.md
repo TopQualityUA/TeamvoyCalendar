@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="../dist/styles/date_range_picker.css"/>
 
 [![bitHound Score](https://www.bithound.io/TopQualityUA/TeamvoyCalendar/badges/score.svg)](https://www.bithound.io/TopQualityUA/TeamvoyCalendar)
+[![Inline docs](http://inch-ci.org/github/TopQualityUA/TeamvoyCalendar.svg?branch=master)](http://inch-ci.org/github/TopQualityUA/TeamvoyCalendar)
 
 Calendar.js
 =============
