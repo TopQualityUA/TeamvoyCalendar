@@ -30,7 +30,10 @@ Try it out:
 Installation
 ------------
 
-Download the Calendar library from here: https://github.com/neformal13/TeamvoyFrontend/tree/master/javascript/calendar and include it like this:
+Download the Calendar library from here: https://github.com/marzubov/TeamvoyCalendar
+Or with install with bower: `bower install teamvoycalendar`
+
+And include it like this:
 ```js
 <script data-main="../main.js" src="../vendor/requirejs/require.js"></script>
 
