@@ -31,6 +31,7 @@ Installation
 ------------
 
 Download the Calendar library from here: https://github.com/marzubov/TeamvoyCalendar
+
 Or with install with bower: `bower install teamvoycalendar`
 
 And include it like this:
