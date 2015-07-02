@@ -1,6 +1,6 @@
 /* global define: true */
-define(["calendar", "calendar_templates", "event_machine",
-      "moment", "calendar_helper"
+define(["./calendar", "./calendar_templates", "../../library/event_machine",
+      "moment", "./calendar_helper"
     ],
     function(Calendar, CalendarTemplates, EventMachine, moment) {
       "use strict";

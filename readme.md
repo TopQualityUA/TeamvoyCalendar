@@ -10,8 +10,8 @@ Calendar.js
 CalendarJS is an open source library that provides using custom calendar element.
 It's lightweight, and depends only on moment js library (for localization).
 
-* [demo](https://TopQualityUA.github.io/TeamvoyCalendar/calendar_demo.html)
-* [documentation](https://TopQualityUA.github.io/TeamvoyCalendar/readme.html)
+* [demo](https://marzubov.github.io/TeamvoyCalendar/calendar_demo.html)
+* [documentation](https://marzubov.github.io/TeamvoyCalendar/readme.html)
 
 Try it out:
 
@@ -177,3 +177,12 @@ You can use calendar to create date range pickers:
 </div>
 
 <script data-main="documentation_main.js" src="../library/vendor/requirejs.js"></script>
+
+Development
+-----
+
+```js
+npm run build                       // build files
+npm run dev                         // run webpack dev server
+npm run deploy                      // build files for production(uglify, minify)
+```

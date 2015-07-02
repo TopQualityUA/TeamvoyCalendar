@@ -3,8 +3,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Calendar Demo</title>
-		<link rel="stylesheet" href="../dist/styles/calendar.css"/>
-		<link rel="stylesheet" href="../dist/styles/date_range_picker.css"/>
+		<link rel="stylesheet" href="../date_range_picker.css"/>
+		<!--For gh-pages(production)-->
+		<!--<link rel="stylesheet" href="../dist/styles/date_range_picker.css"/>-->
 	</head>
 	<body>
 		<article>
@@ -43,7 +44,8 @@
 		</article>
 
 		<!--export amd-->
-		<script data-main="main.js" src="../library/vendor/requirejs.js"></script>
+		<script src="http://localhost:8080/webpack-dev-server.js"></script>
+		<script data-main="main.js" src="../node_modules/requirejs/require.js"></script>
 
 		<!--export global-->
 		<!--<script src="../dist/scripts/date_range_picker_umd.js"></script>-->
