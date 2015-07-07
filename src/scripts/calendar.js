@@ -278,7 +278,7 @@ define(["./calendar_templates", "../../library/event_machine",
                 throw "Date validation error: " + _date.invalidAt();
             }
             _model.daysNames = _getDaysNamesArray(_date.clone(), config);
-            _model.currentMonth = moment().set('month', config.month-1).format("MMMM");
+            _model.currentMonth = moment().locale(config.locale).set('month', config.month-1).format("MMMM");
             _model.days = _getDaysArray(_date, _maxDaysNumber, config);
             return _model;
         };

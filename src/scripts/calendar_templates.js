@@ -15,8 +15,8 @@ define([],
                 "<button class='calendar__prev-month'></button>" +
                 "<button class='calendar__next-month'></button>" +
                 "<div class='calendar__month-and-year'>" +
-                "<span class='calendar__month-name'>{Month Name}</span>" +
-                "<span class='calendar__year-name'>{Year Name}</span>" +
+                "<span class='calendar__month-name'>{{Month Name}}</span>" +
+                "<span class='calendar__year-name'>{{Year Name}}</span>" +
                 "</div>" +
                 "</div>" +
                 "<div class='calendar__header'></div>" +
